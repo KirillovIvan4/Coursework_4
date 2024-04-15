@@ -1,4 +1,4 @@
-import class_parser
+from src import class_parser
 import requests
 import json
 class Parser:
@@ -18,7 +18,7 @@ class HH(class_parser.Parser):
         self.params = {'text': '', 'page': 0, 'per_page': 100}
 
 
-    def upload_and_record_vacancies(self, keyword,number_page):
+    def upload_and_record_vacancies(self, keyword,number_page = 0):
         """
         Метод upload_and_record_vacancies реализует загрузку в файл vacancies.json вакансий
         с ключевым словом "keyword" введеных пользователем. 100 вакансий с первой страници hh.ru
@@ -56,7 +56,7 @@ class HH(class_parser.Parser):
 
             vacancies.append(vacancy)
 
-        with open("../data/vacancies.json", "w", encoding='utf-8') as file:
+        with open("data/vacancies.json", "w", encoding='utf-8') as file:
             json.dump(vacancies, file, ensure_ascii=False, indent=4)
 
 
