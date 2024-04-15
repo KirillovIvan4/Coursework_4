@@ -18,7 +18,7 @@ class HH(class_parser.Parser):
         self.params = {'text': '', 'page': 0, 'per_page': 100}
 
 
-    def upload_and_record_vacancies(self, keyword,number_page = 0):
+    def upload_and_record_vacancies(self, keyword, number_page):
         """
         Метод upload_and_record_vacancies реализует загрузку в файл vacancies.json вакансий
         с ключевым словом "keyword" введеных пользователем. 100 вакансий с первой страници hh.ru
@@ -26,11 +26,18 @@ class HH(class_parser.Parser):
         :return: возвращается файл vacancies.json
         """
 
+        if keyword == '':
+            raise ValueError("Вы не ввели вакансию!")
+        if number_page.isdigit() == False:
+            raise ValueError("Номер страницы должен быть цифрой!")
+
+        number_page = int(number_page)
         self.params['text'] = keyword
         self.params['page'] = number_page - 1
         vacancies = []
         response = requests.get(self.url, headers=self.headers, params=self.params)
         result = response.json()['items']
+
         for vacancy_number in range(len(result)):
             vacancy = {}
             # id вакансии
@@ -59,7 +66,3 @@ class HH(class_parser.Parser):
         with open("data/vacancies.json", "w", encoding='utf-8') as file:
             json.dump(vacancies, file, ensure_ascii=False, indent=4)
 
-
-hh = HH()
-hh.upload_and_record_vacancies('python',1)
-# print(hh)
