@@ -60,6 +60,8 @@ class HH(class_parser.Parser):
             vacancy["experience"] = result[vacancy_number]["experience"]
             # Занятость
             vacancy["employment"] = result[vacancy_number]["employment"]
+            # Ссылка на выкансию
+            vacancy["alternate_url"] = result[vacancy_number]["alternate_url"]
 
             vacancies.append(vacancy)
 

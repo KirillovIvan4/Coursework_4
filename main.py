@@ -11,9 +11,13 @@ for i in range(len(data_vacancies)):
     vacancies = class_vacancies.Vacancies(data_vacancies[i]["id"], data_vacancies[i]["name"], data_vacancies[i]["area"])
     list_vacancies.append(vacancies)
 
-print(len(list_vacancies), list_vacancies)
 
-print(len(list_vacancies), list_vacancies)
+filter_list_vacancies = class_filter_vacancies.FilterVacancies(list_vacancies)
+
+print(filter_list_vacancies)
+filter_list_vacancies = class_filter_vacancies.FilterVacancies.filter_by_area(filter_list_vacancies.list_vacancies, "Алматы")
+print(filter_list_vacancies)
+# print(len(list_vacancies), list_vacancies)
 
 # 1 - area - город по умолчанию Москва
 # 2 - from - зарплата "от" по умолчанию 0 to - зарплата "к" по умолчанию равна from
