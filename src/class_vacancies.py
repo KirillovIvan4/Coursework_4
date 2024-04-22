@@ -18,7 +18,7 @@ class Vacancies:
 
 
     def __repr__(self):
-        return f"salary- {self.salary['currency']} "
+        return f"id - {self.id} salary- {self.salary['currency']} "
 
 
     def editing_salary(self):
@@ -35,12 +35,16 @@ class Vacancies:
             if self.salary["from"] == None:
                 self.salary["from"] = 0
 
-    def a_salary(self):
-        exchange_rates = utils.upload_and_record_exchange_rates()
+    def convert_currency_salary(self, exchange_rates):
+        exchange_rates = exchange_rates
         if self.salary['currency'] != 'RUR':
-             for currency in exchange_rates:
-                 if currency == self.salary['currency']:
-                     self.salary["to"] = int(self.salary["to"] / exchange_rates[currency])
-                     self.salary["from"] = int(self.salary["from"] / exchange_rates[currency])
-
+            # Замена кода валюты у беларуских рублей на код соответствующий коду у центробанка
+            if self.salary['currency'] == 'BYR':
+                self.salary['currency'] = "BYN"
+            if self.salary['currency'] != 'RUR':
+                for currency in exchange_rates:
+                    if currency == self.salary['currency']:
+                        self.salary["to"] = int(self.salary["to"] / exchange_rates[currency])
+                        self.salary["from"] = int(self.salary["from"] / exchange_rates[currency])
+                        self.salary['currency'] = 'RUR'
 

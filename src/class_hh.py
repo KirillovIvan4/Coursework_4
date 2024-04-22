@@ -18,7 +18,7 @@ class HH(class_parser.Parser):
         self.params = {'text': '', 'page': 0, 'per_page': 100}
 
 
-    def upload_and_record_vacancies(self, keyword):
+    def upload_and_record_vacancies(self, keyword, page):
         """
         Метод upload_and_record_vacancies реализует загрузку в файл vacancies.json вакансий
         с ключевым словом "keyword" введеных пользователем. 100 вакансий с первой страници hh.ru

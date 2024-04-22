@@ -1,4 +1,4 @@
-
+import json
 
 class FilterVacancies:
     def __init__(self, list_vacancies:list):
@@ -14,6 +14,7 @@ class FilterVacancies:
     def __len__(self):
         len_vacancies = len(self.list_vacancies)
         return len_vacancies
+
     @classmethod
     def filter_by_area(cls, list_vacancies, area):
         new_list_vacancies= []
@@ -55,4 +56,18 @@ class FilterVacancies:
             if vacancies.employment["name"] == employment:
                 new_list_vacancies.append(vacancies)
 
+        return cls(new_list_vacancies)
+
+    @classmethod
+    def top_vacancies(cls, list_vacancies, top_vacancies):
+        new_list_vacancies = list_vacancies[:top_vacancies]
+        return cls(new_list_vacancies)
+
+    @classmethod
+    def delite_vacancies(cls, list_vacancies, id_vacancies):
+        new_list_vacancies = []
+        if id_vacancies != "clear":
+            for vacancies in list_vacancies:
+                if vacancies.id != id_vacancies:
+                    new_list_vacancies.append(vacancies)
         return cls(new_list_vacancies)
