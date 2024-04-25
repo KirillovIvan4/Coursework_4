@@ -20,6 +20,23 @@ class Vacancies:
     def __repr__(self):
         return f"id - {self.id} salary- {self.salary['currency']} "
 
+    def __str__(self):
+        return f"""------------------------------
+id вакансии - {self.id}
+{self.name}
+Город - {self.area['name']}
+Зарплата в рублях
+от - {self.salary["from"]}
+до - {self.salary["to"]}
+Работодатель - {self.employer['name']}
+Обязанности - {self.snippet['requirement']}
+График работы - {self.schedule['name']}
+Должность -{self.professional_roles[0]['name']}
+Опыт -  {self.experience['name']}
+Занятость - {self.employment['name']}
+Ссылка на вакансию - {self.alternate_url}
+------------------------------
+"""
 
     def editing_salary(self):
         """
