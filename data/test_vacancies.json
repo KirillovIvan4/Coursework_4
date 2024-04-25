@@ -1,0 +1,149 @@
+[
+    {
+        "id": "97098403",
+        "name": "Project Manager/Product manager",
+        "area": {
+            "id": "1",
+            "name": "Москва",
+            "url": "https://api.hh.ru/areas/1"
+        },
+        "salary": {
+            "from": 398243,
+            "to": 398243,
+            "currency": "RUR",
+            "gross": false
+        },
+        "employer": {
+            "id": "3749818",
+            "name": "Bazilik Group",
+            "url": "https://api.hh.ru/employers/3749818",
+            "alternate_url": "https://hh.ru/employer/3749818",
+            "logo_urls": null,
+            "vacancies_url": "https://api.hh.ru/vacancies?employer_id=3749818",
+            "accredited_it_employer": false,
+            "trusted": true
+        },
+        "snippet": {
+            "requirement": "Понимание кода (JS, <highlighttext>Python</highlighttext>) - на базовом уровне. Понимание как устроен бэк и фронт. UI/UX. Умение составлять SQL запросы, пользоваться...",
+            "responsibility": "Анализировать бизнес требования, проводить системный анализ. Описывать тикет, вести его с разработчиком. Отвечать за сроки выхода задач. Отвечать за полноту..."
+        },
+        "schedule": {
+            "id": "remote",
+            "name": "Удаленная работа"
+        },
+        "professional_roles": [
+            {
+                "id": "107",
+                "name": "Руководитель проектов"
+            }
+        ],
+        "experience": {
+            "id": "between3And6",
+            "name": "От 3 до 6 лет"
+        },
+        "employment": {
+            "id": "full",
+            "name": "Полная занятость"
+        },
+        "alternate_url": "https://hh.ru/vacancy/97098403"
+    },
+    {
+        "id": "95798466",
+        "name": "Младший аналитик данных",
+        "area": {
+            "id": "1",
+            "name": "Москва",
+            "url": "https://api.hh.ru/areas/1"
+        },
+        "salary": {
+            "from": 0,
+            "to": 0,
+            "currency": "RUR"
+        },
+        "employer": {
+            "id": "2637711",
+            "name": "AWATERA",
+            "url": "https://api.hh.ru/employers/2637711",
+            "alternate_url": "https://hh.ru/employer/2637711",
+            "logo_urls": {
+                "90": "https://img.hhcdn.ru/employer-logo/6247510.png",
+                "original": "https://img.hhcdn.ru/employer-logo-original/1156765.png",
+                "240": "https://img.hhcdn.ru/employer-logo/6247511.png"
+            },
+            "vacancies_url": "https://api.hh.ru/vacancies?employer_id=2637711",
+            "accredited_it_employer": false,
+            "trusted": true
+        },
+        "snippet": {
+            "requirement": "Power BI (или любой другой инструмент для визуализации данных). Знание продуктовых метрик. Знание <highlighttext>Python</highlighttext> будет плюсом. Умение выяснять у пользователей...",
+            "responsibility": "Формировать систему отчетности в компании и поддерживать ее в актуальном состоянии. Подготавливать необходимые пользователям выгрузки. Подготавливать годовой план и квартальные..."
+        },
+        "schedule": {
+            "id": "fullDay",
+            "name": "Полный день"
+        },
+        "professional_roles": [
+            {
+                "id": "156",
+                "name": "BI-аналитик, аналитик данных"
+            }
+        ],
+        "experience": {
+            "id": "between1And3",
+            "name": "От 1 года до 3 лет"
+        },
+        "employment": {
+            "id": "full",
+            "name": "Полная занятость"
+        },
+        "alternate_url": "https://hh.ru/vacancy/95798466"
+    },
+    {
+        "id": "96034351",
+        "name": "Junior Python разработчик",
+        "area": {
+            "id": "2",
+            "name": "Санкт-Петербург",
+            "url": "https://api.hh.ru/areas/2"
+        },
+        "salary": {
+            "from": 50000,
+            "to": 50000,
+            "currency": "RUR",
+            "gross": false
+        },
+        "employer": {
+            "id": "10938683",
+            "name": "Скиба Богдан",
+            "url": "https://api.hh.ru/employers/10938683",
+            "alternate_url": "https://hh.ru/employer/10938683",
+            "logo_urls": null,
+            "vacancies_url": "https://api.hh.ru/vacancies?employer_id=10938683",
+            "accredited_it_employer": false,
+            "trusted": false
+        },
+        "snippet": {
+            "requirement": "<highlighttext>Python</highlighttext>. Асинхронное программирование. Знание минимум 1 веб фреймворка. Знание минимум 1 БД и 1 ORM. HTTP И REST. GIT. ",
+            "responsibility": "Разработка продуктов, интеграция ИИ решений с помощью api. Поддержка и расширение написанного кода."
+        },
+        "schedule": {
+            "id": "fullDay",
+            "name": "Полный день"
+        },
+        "professional_roles": [
+            {
+                "id": "96",
+                "name": "Программист, разработчик"
+            }
+        ],
+        "experience": {
+            "id": "noExperience",
+            "name": "Нет опыта"
+        },
+        "employment": {
+            "id": "full",
+            "name": "Полная занятость"
+        },
+        "alternate_url": "https://hh.ru/vacancy/96034351"
+    }
+]
