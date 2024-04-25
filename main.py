@@ -1,11 +1,12 @@
 from src import class_hh, utils, class_vacancies, class_filter_vacancies
 import json
 
-keyword = input("Введите вакансию")
+keyword = input("Введите вакансию\n")
 user_answer = False
+page = 0
 while user_answer != True:
     page = input("""Введите сколько страниц загрузить.Максимум 20 страниц
-    (на каждой странице 100 вакансий """)
+    (на каждой странице 100 вакансий \n""")
     if page.isdigit() == True:
         page = int(page)
         if page <= 20:
@@ -15,7 +16,7 @@ while user_answer != True:
     else:
         print("Введите число")
 
-area_user = "Москва"
+# area_user = "Москва"
 
 
 # Запись вакансий в файл vacancies.json
@@ -23,7 +24,7 @@ hh = class_hh.HH()
 hh.upload_and_record_vacancies(keyword, page)
 
 # Запись актуального курса валют в файл exchange_rates.json
-utils.upload_exchange_rates()
+utils.record_exchange_rates()
 # Список курса валют
 exchange_rates = utils.get_dict_exchange_rates()
 
@@ -97,11 +98,11 @@ while number_filter != 9:
                 print("Выбран несуществующий фильтр")
 
         if number_filter == '4':
-            filter_experience = int(input("""
+            filter_experience = input("""
             1 - Нет опыта
             2 - От 1 года до 3 лет
             3 - От 3 до 6 лет
-            4 - Более 6 лет\n"""))
+            4 - Более 6 лет\n""")
             if filter_experience in ['1', '2', '3', '4']:
                 if filter_experience == '1':
                     experience = "Нет опыта"
@@ -118,10 +119,10 @@ while number_filter != 9:
                 print("Выбран несуществующий фильтр")
 
         if number_filter == '5':
-            filter_employment = int(input("""
+            filter_employment = input("""
             1 - Стажировка
             2 - Частичная занятость
-            3 - Полная занятость\n"""))
+            3 - Полная занятость\n""")
             if filter_employment in ['1', '2', '3']:
                 if filter_employment == '1':
                     employment = "Стажировка"
@@ -135,18 +136,18 @@ while number_filter != 9:
             else:
                 print("Выбран несуществующий фильтр")
 
-        if number_filter == 6:
-            answer_user = int(input("""
+        if number_filter == '6':
+            answer_user = input("""
             1 - Показать весь список вакансий 
             2 - Показать топ n вакансий 
-            """))
+            """)
             if answer_user in ['1', '2']:
-                if answer_user == 1:
+                if answer_user == '1':
                     print("sda")
                     for vacancies in filter_list_vacancies.list_vacancies:
                         print(vacancies)
 
-                if answer_user == 2:
+                if answer_user == '2':
                     top_vacancies = int(input("Сколько вакансий показать?\n"))
                     filter_list_vacancies = class_filter_vacancies.FilterVacancies.top_vacancies (filter_list_vacancies.list_vacancies, top_vacancies)
                     for vacancies in filter_list_vacancies.list_vacancies:
@@ -154,20 +155,20 @@ while number_filter != 9:
             else:
                 print("Выбран несуществующий фильтр")
 
-        if number_filter == 7:
+        if number_filter == '7':
             print(utils.save_vacancies(filter_list_vacancies.list_vacancies))
 
-        if number_filter == 8:
-            answer_user = int(input("""
+        if number_filter == '8':
+            answer_user = input("""
                     1 - Очистить список вакансий
                     2 - удалить одну вакансию по id
-                    """))
+                    """)
             if answer_user in ['1', '2']:
-                if answer_user == 1:
+                if answer_user == '1':
                     answer_user = "clear"
                     filter_list_vacancies = class_filter_vacancies.FilterVacancies.delite_vacancies(filter_list_vacancies.list_vacancies, answer_user)
                     utils.save_vacancies(filter_list_vacancies.list_vacancies)
-                if answer_user == 2:
+                if answer_user == '2':
                     answer_user = input("""
                         Введите id вакансии
                         """)
@@ -176,7 +177,7 @@ while number_filter != 9:
             else:
                 print("Выбран несуществующий фильтр")
 
-        if number_filter == 9:
+        if number_filter == '9':
             print("Завершить программу?")
             answer_user = input("y/n\n")
             if answer_user == "y":
