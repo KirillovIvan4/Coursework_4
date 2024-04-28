@@ -21,7 +21,7 @@ while user_answer != True:
 
 # Запись вакансий в файл vacancies.json
 hh = class_hh.HH()
-hh.upload_and_record_vacancies(keyword, page)
+hh.record_vacancies(keyword, page)
 
 # Запись актуального курса валют в файл exchange_rates.json
 utils.record_exchange_rates()
@@ -32,6 +32,8 @@ data_vacancies = utils.get_list()
 list_vacancies = []
 
 for i in range(len(data_vacancies)):
+
+
     vacancies = class_vacancies.Vacancies(
         data_vacancies[i]["id"],
         data_vacancies[i]["name"],
