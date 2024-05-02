@@ -1,4 +1,4 @@
-from src import class_hh, utils, class_vacancies, class_filter_vacancies
+from src import class_hh, utils, class_vacancies, class_filter_vacancies, class_save_vacancies
 import json
 
 keyword = input("Введите вакансию\n")
@@ -16,12 +16,11 @@ while user_answer != True:
     else:
         print("Введите число")
 
-# area_user = "Москва"
-
-
 # Запись вакансий в файл vacancies.json
-hh = class_hh.HH()
-hh.record_vacancies(keyword, page)
+
+hh = class_save_vacancies.SaveVacancies(keyword, page)
+hh.record_vacancies()
+
 
 # Запись актуального курса валют в файл exchange_rates.json
 utils.record_exchange_rates()
